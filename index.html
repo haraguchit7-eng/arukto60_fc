@@ -181,9 +181,50 @@ p{
   box-shadow:0 28px 90px rgba(0,0,0,.26);
 }
 .hero-photo{
-  min-height:540px;
-  border-radius:30px;
-  background:
+    position:relative;
+    min-height:620px;
+    overflow:hidden;
+    border-radius:32px;
+}
+  .hero-image{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(7,31,58,.10),
+        rgba(7,31,58,.45)
+    );
+
+    z-index:1;
+}
+.hero-card{
+    position:absolute;
+    left:30px;
+    right:30px;
+    bottom:30px;
+
+    z-index:2;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:24px;
+    padding:24px;
+}
     linear-gradient(180deg,rgba(7,31,58,.05),rgba(7,31,58,.82)),
     url("assets/fc-hero.jpg") center/cover no-repeat,
     linear-gradient(135deg,#dbeafe,#ecfdf5);
@@ -417,12 +458,23 @@ p{
 
     <div class="hero-visual reveal">
       <div class="hero-photo">
-        <div class="hero-card">
-          <strong>“歩ける未来”を、地域につくる。</strong>
-        </div>
-      </div>
+
+    <img
+      src="images/arukto60-fv.jpg"
+      alt="ARUKTO60"
+      class="hero-image"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-card">
+        <strong>“歩ける未来”を、地域につくる。</strong>
+        <span>
+            健康寿命市場で、地域No.1を目指す。
+        </span>
     </div>
-  </div>
+
+</div>
 </section>
 
 <section class="section white">
@@ -572,9 +624,9 @@ p{
         </div>
       </div>
       <div class="sim reveal">
-        <div class="sim-card"><h3>会員30名</h3><strong>初期黒字化</strong><span>小規模併設モデル</span></div>
-        <div class="sim-card"><h3>会員50名</h3><strong>安定運営</strong><span>地域密着モデル</span></div>
-        <div class="sim-card"><h3>会員100名</h3><strong>高収益化</strong><span>専用店舗モデル</span></div>
+        <div class="sim-card"><h3>会員180名</h3><strong>初期黒字化</strong><span>小規模併設モデル</span></div>
+        <div class="sim-card"><h3>会員230名</h3><strong>安定運営</strong><span>地域密着モデル</span></div>
+        <div class="sim-card"><h3>会員300名</h3><strong>高収益化</strong><span>専用店舗モデル</span></div>
       </div>
     </div>
   </div>
