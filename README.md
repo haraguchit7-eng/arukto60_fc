@@ -1,1 +1,0 @@
-# arukto60_fc
