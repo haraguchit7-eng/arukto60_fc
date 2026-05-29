@@ -379,6 +379,139 @@ p{
   .float-cta{left:12px;right:12px;bottom:12px}
   .float-cta a{flex:1;text-align:center;padding:12px 8px}
 }
+  /* 未来を見せる4枚グリッド */
+.photo-story{
+  background:#fff;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  grid-template-rows:260px 260px;
+  gap:18px;
+  margin-top:44px;
+}
+
+.photo-card{
+  position:relative;
+  border-radius:30px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 20px 50px rgba(7,31,58,.12);
+}
+
+.photo-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(7,31,58,.05),
+    rgba(7,31,58,.58)
+  );
+}
+
+.photo-card span{
+  position:absolute;
+  left:26px;
+  bottom:24px;
+  z-index:2;
+  color:#fff;
+  font-size:24px;
+  font-weight:950;
+}
+
+.photo01{
+  grid-row:span 2;
+  background-image:url("assets/future-travel.png");
+}
+
+.photo02{
+  background-image:url("assets/future-grandchild.png");
+}
+
+.photo03{
+  background-image:url("assets/future-hobby.png");
+}
+
+.photo04{
+  background-image:url("assets/future-walk.png");
+}
+
+/* サポート写真付き */
+.support-photo-wrap{
+  margin-top:46px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:32px;
+  align-items:stretch;
+}
+
+.support-photo{
+  min-height:440px;
+  border-radius:32px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7,31,58,.08),
+      rgba(7,31,58,.42)
+    ),
+    url("assets/photo-support.png") center center/cover no-repeat;
+  box-shadow:0 24px 70px rgba(7,31,58,.14);
+}
+
+/* 最終CTA写真 */
+.final{
+  position:relative;
+  overflow:hidden;
+}
+
+.final::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4,23,45,.88),
+      rgba(4,23,45,.72),
+      rgba(4,23,45,.34)
+    ),
+    url("assets/photo-final.png") center center/cover no-repeat;
+  z-index:0;
+}
+
+.final .container{
+  position:relative;
+  z-index:1;
+}
+
+@media(max-width:1080px){
+  .photo-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:240px 240px;
+  }
+
+  .photo01{
+    grid-row:auto;
+  }
+
+  .support-photo-wrap{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:640px){
+  .photo-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:260px 260px 260px 260px;
+  }
+
+  .support-photo{
+    min-height:320px;
+  }
+}
 </style>
 </head>
 
@@ -509,7 +642,36 @@ p{
     </div>
   </div>
 </section>
+<section class="section photo-story">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow">Future</div>
+      <h2>歩ける未来は、<br>地域の価値になる。</h2>
+      <p class="lead">
+        ARUKTO60が提供するのは、運動そのものではありません。
+        60歳からの人生を、もう一度自由にする体験です。
+      </p>
+    </div>
 
+    <div class="photo-grid reveal">
+      <div class="photo-card photo01">
+        <span>旅行を楽しめる</span>
+      </div>
+
+      <div class="photo-card photo02">
+        <span>孫と遊べる</span>
+      </div>
+
+      <div class="photo-card photo03">
+        <span>趣味を続けられる</span>
+      </div>
+
+      <div class="photo-card photo04">
+        <span>外出が楽しくなる</span>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section gray">
   <div class="container">
     <div class="center reveal">
@@ -619,16 +781,24 @@ p{
     <div class="center reveal">
       <div class="eyebrow">Support</div>
       <h2>未経験でも始められる<br>本部サポート。</h2>
+      <p class="lead">
+        開業前から運営後まで、測定・接客・集客・継続率向上を本部がサポートします。
+      </p>
     </div>
-    <div class="support-grid reveal">
-      <div class="support"><h3>開業研修</h3><p>測定・接客・運営を体系化。</p></div>
-      <div class="support"><h3>測定マニュアル</h3><p>誰でも一定品質で実施可能。</p></div>
-      <div class="support"><h3>集客支援</h3><p>LP・広告素材・SNS素材を提供。</p></div>
-      <div class="support"><h3>運営支援</h3><p>会員継続・再測定導線を設計。</p></div>
-      <div class="support"><h3>プログラム設計</h3><p>60歳以上向けに最適化。</p></div>
-      <div class="support"><h3>データ活用</h3><p>結果を分かりやすく伝える。</p></div>
-      <div class="support"><h3>自治体営業</h3><p>地域健康イベント提案を支援。</p></div>
-      <div class="support"><h3>ブランド提供</h3><p>上質な健康寿命ブランドを活用。</p></div>
+
+    <div class="support-photo-wrap reveal">
+      <div class="support-photo"></div>
+
+      <div class="support-grid">
+        <div class="support"><h3>開業研修</h3><p>測定・接客・運営を体系化。</p></div>
+        <div class="support"><h3>測定マニュアル</h3><p>誰でも一定品質で実施可能。</p></div>
+        <div class="support"><h3>集客支援</h3><p>LP・広告素材・SNS素材を提供。</p></div>
+        <div class="support"><h3>運営支援</h3><p>会員継続・再測定導線を設計。</p></div>
+        <div class="support"><h3>プログラム設計</h3><p>60歳以上向けに最適化。</p></div>
+        <div class="support"><h3>データ活用</h3><p>結果を分かりやすく伝える。</p></div>
+        <div class="support"><h3>自治体営業</h3><p>地域健康イベント提案を支援。</p></div>
+        <div class="support"><h3>ブランド提供</h3><p>上質な健康寿命ブランドを活用。</p></div>
+      </div>
     </div>
   </div>
 </section>
