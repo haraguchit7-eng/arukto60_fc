@@ -114,7 +114,17 @@ p{
   height:82px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
 }
-.logo img{width:320px;height:auto;object-fit:contain}
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  width:280px !important;
+  height:auto !important;
+  display:block;
+  object-fit:contain;
+}
 .logo-fallback{
   display:flex;align-items:center;gap:12px;font-weight:950;
   color:var(--navy);letter-spacing:-.03em;font-size:28px;
@@ -519,9 +529,8 @@ p{
 <header class="header">
   <div class="header-inner">
     <a href="#top" class="logo">
-      <img src="assets/logo-arukto60.png" alt="ARUKTO60" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="logo-fallback" style="display:none;"><div class="logo-mark">A</div>ARUKTO60</div>
-    </a>
+  <img src="assets/logo-arukto60-new.png" alt="ARUKTO60">
+</a>
     <nav class="nav">
       <a href="#market">市場性</a>
       <a href="#about">ARUKTO60とは</a>
